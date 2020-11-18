@@ -6,3 +6,4 @@ module.exports = {
         return JSON.parse(fs.readFileSync(this.bd,'utf-8'));
     }
 }
+
