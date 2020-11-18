@@ -1,26 +1,27 @@
-const index = require('./src/index')
+const index = require("./src/index")
 
-
-module.exports = function(req,res){
+module.exports = function (req, res) {
     switch (req.url) {
-        case '/':
-            index.homePage(req,res)
+        case "/":
+            index.homePage(req, res)
             break;
-        case '/en-cartelera':
-            index.enCartelera(req,res)
+        case "/en-cartelera":
+            index.enCartelera(req, res)
             break;
-        case '/mas-votadas':
-            index.masVotadas(req,res)
+        case "/contacto":
+            index.contacto(req, res);
             break;
-        case '/preguntas-frecuentes':
-            index.preguntasFrecuentes(req,res)
+        case "/mas-votadas":
+            index.masVotadas(req, res);
             break;
-        case '/sucursales':
-            index.sucursales(req,res)
-        case '/contacto':
-            index.contacto(req,res)
+        case "/preguntas-frecuentes":
+            index.preguntasFrecuentes(req,res);
             break;
-        default:res.write('404 Not found')
+        case "/sucursales":
+            index.sucursales(req,res);
+            break;
+        default:
+            res.write(`404 Not Found.`)
             break;
     }
 }
