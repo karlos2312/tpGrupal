@@ -8,8 +8,19 @@ module.exports = function(req,res){
             break;
         case '/en-cartelera':
             index.enCartelera(req,res)
-            break
-        default:
+            break;
+        case '/mas-votadas':
+            index.masVotadas(req,res)
+            break;
+        case '/preguntas-frecuentes':
+            index.preguntasFrecuentes(req,res)
+            break;
+        case '/sucursales':
+            index.sucursales(req,res)
+        case '/contacto':
+            index.contacto(req,res)
+            break;
+        default:res.write('404 Not found')
             break;
     }
 }
