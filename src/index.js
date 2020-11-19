@@ -20,11 +20,8 @@ module.exports = {
         
         res.end()
     },
-    contacto : function(req,res){
-        movies.movies.forEach(movie => {
-            res.write(movie.title +'\n')
-        });
-        
+    contacto: function (req, res) {
+        res.write(contacto.contacto())
         res.end()
     },
     preguntasFrecuentes : function (req,res){
