@@ -2,7 +2,8 @@ let homePage = require('./homePage')
 
 let movies = homePage.leerJSON()
 
-let preguntas = require("./preguntasFrecuentes")
+let preguntas = require('./preguntasFrecuentes')
+let contacto = require('./contacto.js')
 
 module.exports = {
     homePage : function(req,res){
@@ -37,15 +38,6 @@ module.exports = {
      let faqs = preguntas.faqsJSON().faqs
         res.write('Preguntas frecuentes')
 		res.write('\n\n')
-		faqs.sort(function (a, b) {
-		if (a.title > b.title) {
-		return 1;
-		}
-		if (a.title < b.title) {
-		return -1;
-        }
-		return 0;
-		});
 		res.write('Total de preguntas: ' + faqs.length)
 		res.write('\n\n')
 		faqs.forEach((faqs) => {
@@ -54,8 +46,6 @@ module.exports = {
 		res.write('Respuesta :' + faqs.faq_answer)
 		res.write('\n\n');
 		})
-		res.end();
-			
-		break;
+		res.end()
 }
 }
