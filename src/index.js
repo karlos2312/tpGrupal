@@ -1,14 +1,14 @@
 let homePage = require('./homePage')
 
-let movies = homePage.leerJSON()
+let movies = homePage.peliculas()
 
 let preguntas = require('./preguntasFrecuentes')
 let contacto = require('./contacto.js')
 
 module.exports = {
     homePage : function(req,res){
-        movies.movies.forEach(movie => {
-            res.write(movie.title +'\n')
+        movies.forEach(movie => {
+            res.write(movie +'\n')
         });
         
         res.end()
@@ -21,13 +21,6 @@ module.exports = {
         res.end()
     },
     contacto : function(req,res){
-        movies.movies.forEach(movie => {
-            res.write(movie.title +'\n')
-        });
-        
-        res.end()
-    },
-    homePage : function(req,res){
         movies.movies.forEach(movie => {
             res.write(movie.title +'\n')
         });
