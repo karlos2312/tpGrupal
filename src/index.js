@@ -20,6 +20,19 @@ module.exports = {
         
         res.end()
     },
+    masVotadas: function(req,res){
+        let votadas = masVotadas.masVotadas()   
+        res.write('Mas Votadas \n \n');
+        res.write('Total de películas más votadas: ' + votadas.length + '\n'); 
+        res.write('Rating promedio: ' + masVotadas.promedioRating() + '\n')
+        res.write('Listados de películas:  ')
+        votadas.forEach(movie => {
+            res.write('>_Título: ' + movie.title + '\n');
+            res.write('>_Rating: ' + movie.vote_average + '\n');
+            res.write('>_Reseña: ' + movie.overview + '\n\n');
+            });
+        res.end()
+    },    
     contacto: function (req, res) {
         res.write(contacto.contacto())
         res.end()
