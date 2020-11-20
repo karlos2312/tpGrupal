@@ -1,7 +1,7 @@
 let homePage = require('./homePage')
 
 let movies = homePage.peliculas()
-
+const masVotadas = require('./masVotadas');
 let preguntas = require('./preguntasFrecuentes')
 let contacto = require('./contacto.js')
 
