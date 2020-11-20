@@ -1,10 +1,8 @@
 
-const fs = require('fs')
-
+let fs = require("fs")
 module.exports = {
-    bd : './data/faqs.json',
-    leerJSON : function(){
-        return JSON.parse(fs.readFileSync(this.bd,'utf-8'));
+    faqsJson : function(){    
+       return JSON.parse(fs.readFileSync('./data/faqs.json','utf-8'));
     }
 }
 
