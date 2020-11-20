@@ -1,8 +1,8 @@
-const fs = require('fs')
-
+const homePage = require("./homepage")
 module.exports = {
-    bd : './data/movies.json',
-    leerJSON : function(){
-        return JSON.parse(fs.readFileSync(this.bd,'utf-8'));
+    enCartelera : function (){
+        let info = homePage.leerJSON();
+        let movies = info.movies
+        return movies.sort((a, b) => (a.title > b.title) ? 1 : (a.title < b.title) ? -1 : 0);
     }
 }

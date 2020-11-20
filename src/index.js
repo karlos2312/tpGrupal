@@ -13,11 +13,16 @@ module.exports = {
         
         res.end()
     },
-    enCartelera : function(req,res){
-        movies.movies.forEach(movie => {
-            res.write(movie.title +'\n')
-        });
-        
+    
+    enCartelera: function(req,res){
+        let cartelera = enCartelera.enCartelera();
+        res.write(' >> EN CARTELERA <<< \n'); 
+        res.write('Total de películas: ' + cartelera.length + '\n'); 
+        res.write('Listados de películas:  ')  
+        cartelera.forEach(movie => {
+            res.write('>_ Título: ' + movie.title + '\n');
+            res.write('Reseña: ' + movie.overview +'\n\n')
+            });
         res.end()
     },
     masVotadas: function(req,res){
